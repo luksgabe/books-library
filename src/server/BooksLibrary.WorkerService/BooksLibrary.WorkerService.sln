@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35806.99 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooksLibrary.WorkerService", "BooksLibrary.WorkerService\BooksLibrary.WorkerService.csproj", "{4298964E-7043-4B8F-9F3C-99833A47281E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0- Presentation", "0- Presentation", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Application", "1-Application", "{59AC6240-F713-4895-872B-898056376549}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooksLibrary.Application", "BooksLibrary.Application\BooksLibrary.Application.csproj", "{FF9FFCEE-54A4-4EEC-9F3D-1AB25571BAE5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-", "2-", "{05E7D876-2AFC-4E8A-BD28-5598DA8F7171}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4298964E-7043-4B8F-9F3C-99833A47281E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4298964E-7043-4B8F-9F3C-99833A47281E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4298964E-7043-4B8F-9F3C-99833A47281E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4298964E-7043-4B8F-9F3C-99833A47281E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF9FFCEE-54A4-4EEC-9F3D-1AB25571BAE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF9FFCEE-54A4-4EEC-9F3D-1AB25571BAE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF9FFCEE-54A4-4EEC-9F3D-1AB25571BAE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF9FFCEE-54A4-4EEC-9F3D-1AB25571BAE5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4298964E-7043-4B8F-9F3C-99833A47281E} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{FF9FFCEE-54A4-4EEC-9F3D-1AB25571BAE5} = {59AC6240-F713-4895-872B-898056376549}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {16DA8DCC-E6DC-422B-9DF9-A8E4DC4C1E39}
+	EndGlobalSection
+EndGlobal
