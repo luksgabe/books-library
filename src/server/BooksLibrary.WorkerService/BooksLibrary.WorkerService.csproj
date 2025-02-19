@@ -9,6 +9,18 @@
 
   <ItemGroup>
     <PackageReference Include="Google.Apis.Books.v1" Version="1.68.0.3331" />
+    <PackageReference Include="Hangfire" Version="1.8.18" />
+    <PackageReference Include="Hangfire.Dashboard.Management.v2" Version="2.3.2" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.2" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Options\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BooksLibrary.Infra.CrossCutting.Integrations\BooksLibrary.Infra.CrossCutting.Integrations.csproj" />
+    <ProjectReference Include="..\BooksLibrary.Infra.CrossCutting.IoT\BooksLibrary.Infra.CrossCutting.IoT.csproj" />
   </ItemGroup>
 </Project>
