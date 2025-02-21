@@ -6,15 +6,15 @@ namespace BooksLibrary.WorkerService
     {
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            RecurringJob.AddOrUpdate("RecurringJob", () => _googleApiService.ProccessBooksAsync().GetAwaiter(), Cron.Minutely);
 
+            // Schedule the job to run every hour using Hangfire
+            RecurringJob.AddOrUpdate("RecurringJob", () => _googleApiService.ProccessBooksAsync(), Cron.Hourly);
+
+            // Optionally log periodically to keep the service alive
             while (!stoppingToken.IsCancellationRequested)
             {
-                if (_logger.IsEnabled(LogLevel.Information))
-                {
-                    _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
-                }
-                await Task.Delay(1000, stoppingToken);
+                _logger.LogInformation("Worker is alive at: {time}", DateTimeOffset.Now);
+                await Task.Delay(TimeSpan.FromMinutes(5), stoppingToken);
             }
         }
 

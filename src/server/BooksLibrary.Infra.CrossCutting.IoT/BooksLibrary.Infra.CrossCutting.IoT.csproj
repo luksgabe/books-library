@@ -13,7 +13,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BooksLibrary.Application\BooksLibrary.Application.csproj" />
+    <ProjectReference Include="..\BooksLibrary.Infra.CrossCutting.Bus\BooksLibrary.Infra.CrossCutting.Bus.csproj" />
     <ProjectReference Include="..\BooksLibrary.Infra.CrossCutting.Integrations\BooksLibrary.Infra.CrossCutting.Integrations.csproj" />
+    <ProjectReference Include="..\BooksLibrary.Infra.Data\BooksLibrary.Infra.Data.csproj" />
   </ItemGroup>
 
 </Project>

@@ -2,7 +2,7 @@ global using Hangfire;
 using BooksLibrary.Infra.CrossCutting.Integrations.Options;
 using BooksLibrary.Infra.CrossCutting.IoT;
 using BooksLibrary.WorkerService;
-using Google.Apis.Books.v1.Data;
+using BooksLibrary.WorkerService.Configurations;
 using Hangfire.Dashboard.Management.v2;
 using Microsoft.Extensions.Options;
 
@@ -26,10 +26,15 @@ builder.Services.AddHangfire(configuration =>
 
 builder.Services.AddHangfireServer(x => x.SchedulePollingInterval = TimeSpan.FromSeconds(5));
 
-NativeInjectorBootstrapper.RegisterServices(builder.Services);
+builder.Services.AddDatabaseConfiguration(builder.Configuration);
+
+NativeInjectorBootstrapper.RegisterWorkerServices(builder.Services);
 builder.Services.AddHostedService<Worker>();
 
 builder.Services.AddSingleton(sp => sp.GetRequiredService<IOptions<GoogleApiSettings>>().Value);
 
+builder.Services.AddDatabaseConfiguration(builder.Configuration);
+
 var app = builder.Build();
+DatabaseConfig.CreateDatabaseIfNotExists(app);
 await app.RunAsync();

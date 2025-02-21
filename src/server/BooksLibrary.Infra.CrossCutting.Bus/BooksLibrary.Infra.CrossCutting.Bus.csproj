@@ -7,12 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Google.Apis.Books.v1" Version="1.68.0.3331" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.2" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\BooksLibrary.Application\BooksLibrary.Application.csproj" />
     <ProjectReference Include="..\BooksLibrary.Domain\BooksLibrary.Domain.csproj" />
   </ItemGroup>
 
