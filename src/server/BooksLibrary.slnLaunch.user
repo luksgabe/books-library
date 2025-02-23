@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "Novo Perfil",
+    "Projects": [
+      {
+        "Path": "BooksLibrary.WorkerService\\BooksLibrary.WorkerService.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "BookLibrary.Api\\BookLibrary.Api.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]
