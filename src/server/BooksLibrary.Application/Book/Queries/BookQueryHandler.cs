@@ -10,7 +10,7 @@ namespace BooksLibrary.Application.Book.Queries
     {
         public async Task<PageResult<BookDto>> Handle(GetBooksQuery request, CancellationToken cancellationToken)
         {
-            var pagedBooks = await _bookRepository.GetBooks(request.Size, request.Page);
+            var pagedBooks = await _bookRepository.GetBooks(request.Size, request.Page, request.SearchParam);
             return _mapper.Map<PageResult<BookDto>>(pagedBooks);
         }
     }

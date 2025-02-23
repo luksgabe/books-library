@@ -13,10 +13,23 @@ namespace BooksLibrary.Infra.Data.Repository
         {
         }
 
-        public async Task<PageResult<Book>> GetBooks(int size, int page)
+        public async Task<PageResult<Book>> GetBooks(int size, int page, string searchParam)
         {
-            var books = await _context.Books.Include(i => i.Image).ToListAsync();
-                
+            var books = await _context.Books
+                .Include(i => i.Image)
+                .Where(b => !string.IsNullOrEmpty(searchParam) ? (b.Title.Contains(searchParam) 
+                || b.Description!.Contains(searchParam)
+                || b.Category.Contains(searchParam)) : true)
+                .ToListAsync();
+
+            books = books.Select(s =>
+            {
+                var description = s.Description?.Length > 100 ? $"{s.Description.Substring(0, 100)}..." : s.Description;
+                var result = new Book(s.Title, s.Author, description, s.Category, s.Link);
+                result.SetImage(s.Image!);
+                return result;
+            }).ToList();
+
             return new PageResult<Book>
             {
                 CurrentPage = page,

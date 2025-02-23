@@ -7,6 +7,6 @@ namespace BooksLibrary.Domain.Interfaces.Repository
     {
         Task<Book> GetBySubject(string subject);
         Task<IEnumerable<Book>> GetBooksByTitles(List<string> titles);
-        Task<PageResult<Book>> GetBooks(int size, int page);
+        Task<PageResult<Book>> GetBooks(int size, int page, string searchParam);
     }
 }
